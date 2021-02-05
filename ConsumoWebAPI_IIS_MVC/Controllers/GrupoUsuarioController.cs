@@ -1,10 +1,5 @@
 ﻿using ConsumoWebAPI_IIS_MVC.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ConsumoWebAPI_IIS_MVC.Controllers
 {
