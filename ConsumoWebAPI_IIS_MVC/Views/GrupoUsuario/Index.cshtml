@@ -1,0 +1,49 @@
+﻿<div class="container">
+    <h2>Listagem de Grupros e Membros</h2>
+    <hr />
+
+    <div class="table-responsive">
+        <table class="table-striped">
+            <thead>
+                <tr>
+                    <th style="padding: 0px 20px 0px 20px;">GruposId</th>
+                    <th style="padding: 0px 20px 0px 20px;">GrupoNome</th>
+                    <th style="padding: 0px 20px 0px 20px;">UsuariosId</th>
+                    <th style="padding: 0px 20px 0px 20px;">Nome</th>
+                    <th style="padding: 0px 20px 0px 20px;">Email</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @{
+                    foreach (var item in (List<GrupoUsuario>)ViewBag.Lista)
+                    {
+                        <tr>
+                            <td style="padding: 0px 20px 0px 20px;">@item.GruposId</td>
+                            <td style="padding: 0px 20px 0px 20px;">@item.GrupoNome</td>
+                            <td style="padding: 0px 20px 0px 20px;">@item.UsuariosId</td>
+                            <td style="padding: 0px 20px 0px 20px;">@item.Nome</td>
+                            <td style="padding: 0px 20px 0px 20px;">@item.Email</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+        <br /><hr />
+              <div class="form-inline">
+                  <button type="button" class="btn btn-success btn-sm" onclick="Registrar()">Registrar Novo Membro à um Grupo</button>                 
+                  <button type="button" class="btn btn-dark btn-sm ml-3" onclick="Voltar()">Desistir</button>
+              </div>
+    </div>
+</div>
+
+<script>
+    function Registrar() {
+        window.location.href = '../GrupoUsuario/Registrar';
+    }
+   
+   
+    function Voltar() {
+        window.location.href = '../Home/Index';
+    }
+</script>

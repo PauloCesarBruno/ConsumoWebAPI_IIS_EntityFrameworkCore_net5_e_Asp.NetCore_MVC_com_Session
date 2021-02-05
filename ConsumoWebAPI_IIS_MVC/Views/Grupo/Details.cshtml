@@ -1,0 +1,30 @@
+﻿@model ConsumoWebAPI_IIS_MVC.Models.Grupo
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<h1>Detalhes</h1>
+
+<div>
+    <h4>Grupo</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GrupoNome)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GrupoNome)
+        </dd>
+    </dl>
+</div>
+<div>
+    <button class="btn btn-outline-warning btn-sm">@Html.ActionLink("Editar", "Edit", new { id = Model.Id })</button>
+    <a class="btn btn-outline-success btn-sm" asp-action="Index">Voltar à Lista</a>
+</div>
