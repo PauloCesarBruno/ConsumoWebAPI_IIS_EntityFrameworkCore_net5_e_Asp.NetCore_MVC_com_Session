@@ -1,7 +1,17 @@
 ﻿<div class="container">
-    <h2>Listagem de Grupros e Membros</h2>
+    <div class="form-inline">
+        <div class="col col-6">
+            <h2>Listagem de Grupros e Membros</h2>
+        </div>
+        <button type="button" class="btn btn-outline-primary" onclick="Filtro()">Filtro por Código do Grupo</button>
+    </div>
     <hr />
+</div>
 
+<br />
+
+
+<div class="container">
     <div class="table-responsive">
         <table class="table-striped">
             <thead>
@@ -30,19 +40,24 @@
             </tbody>
         </table>
         <br /><hr />
-              <div class="form-inline">
-                  <button type="button" class="btn btn-success btn-sm" onclick="Registrar()">Registrar Novo Membro à um Grupo</button>                 
-                  <button type="button" class="btn btn-dark btn-sm ml-3" onclick="Voltar()">Desistir</button>
-              </div>
+        <div class="form-inline">
+            <button type="button" class="btn btn-success btn-sm" onclick="Registrar()">Registrar Novo Membro à um Grupo</button>
+            <button type="button" class="btn btn-dark btn-sm ml-3" onclick="Voltar()">Voltar</button>
+        </div>
     </div>
 </div>
+
 
 <script>
     function Registrar() {
         window.location.href = '../GrupoUsuario/Registrar';
     }
-   
-   
+
+    function Filtro() {
+        window.location.href = '../GrupoUsuario/Filtro';
+    }
+
+
     function Voltar() {
         window.location.href = '../Home/Index';
     }

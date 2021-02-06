@@ -1,0 +1,71 @@
+﻿@model GrupoUsuario
+
+<div class="container">
+    <h3>Filtro para Exclusão de Membro Por IdGrupo</h3>
+    <hr />
+    <form asp-controller="GrupoUsuario" asp-action="Filtro">
+        <div class="form-row">
+            <div class="col col-4">
+                <input asp-for="GruposId" type="text" class="form-control" placeholder="Digite o Código(Id) do Grupo" />
+            </div>
+            <div class="col col-2">
+                <button type="submit" class="btn btn-outline-primary">Buscar</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<br />
+
+
+<div class="container">
+    <div class="table-responsive">
+        <table class="table-striped">
+            <thead>
+                <tr>
+                    <th style="padding: 0px 20px 0px 20px;">Id</th>
+                    <th style="padding: 0px 20px 0px 20px;">Grupos</th>
+                    <th style="padding: 0px 20px 0px 20px;">Id</th>
+                    <th style="padding: 0px 20px 0px 20px;">Nome</th>
+                    <th style="padding: 0px 20px 0px 20px;">Email</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @{
+                    @try
+                    {
+                        foreach (var item in (List<GrupoUsuario>)ViewBag.Lista)
+                        {
+                            <tr>
+                                <td style="padding: 0px 20px 0px 20px;">@item.GruposId</td>
+                                <td style="padding: 0px 20px 0px 20px;">@item.GrupoNome</td>
+                                <td style="padding: 0px 20px 0px 20px;">@item.UsuariosId</td>
+                                <td style="padding: 0px 20px 0px 20px;">@item.Nome</td>
+                                <td style="padding: 0px 20px 0px 20px;">@item.Email</td>
+                            </tr>
+                        }
+                    }
+                    catch
+                    {
+                        //
+                    }
+                }
+
+            </tbody>
+        </table>
+        <br /><hr />
+        
+            
+            <button type="button" class="btn btn-dark btn-sm" onclick="Voltar()">Voltar</button>
+        
+    </div>
+</div>
+
+
+<script>
+   
+    function Voltar() {
+        window.location.href = '../GrupoUsuario/Index';
+    }
+</script>

@@ -1,5 +1,6 @@
 ﻿using ConsumoWebAPI_IIS_MVC.Models;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace ConsumoWebAPI_IIS_MVC.Controllers
 {
@@ -32,8 +33,30 @@ namespace ConsumoWebAPI_IIS_MVC.Controllers
             {
                 return View();
             }
-        }                 
+        }       
         
+        [HttpGet]
+        public IActionResult Filtro()
+        {
+            ViewBag.Lista = new GrupoUsuario().RetornarListagem();
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Filtro(GrupoUsuario filtro)
+        {
+            try
+            { 
+            string grupoid = filtro.GruposId.ToString();
+            ViewBag.Lista = new GrupoUsuario().RetornarListagemId(grupoid);
+            return View();
+            }
+            catch(Exception)
+            {
+                return View();
+            }
+        }
+
         private void CarregarDados()
         {
             ViewBag.ListaGrupos = new GrupoUsuario().RetornarListaGrupo();

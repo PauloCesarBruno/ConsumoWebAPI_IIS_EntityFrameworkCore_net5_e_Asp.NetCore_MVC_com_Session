@@ -10,7 +10,7 @@ namespace ConsumoWebAPI_IIS_MVC.Models
 {
     public class GrupoUsuario
     {
-        public int GruposId { get; set; }
+        public String GruposId { get; set; }
         public String GrupoNome { get; set; }
         public int UsuariosId { get; set; }
         public String Nome { get; set; }
@@ -32,7 +32,35 @@ namespace ConsumoWebAPI_IIS_MVC.Models
             {
                 item = new GrupoUsuario
                 {
-                    GruposId = int.Parse(dt.Rows[i]["GruposId"].ToString()),
+                    GruposId = dt.Rows[i]["GruposId"].ToString(),
+                    GrupoNome = dt.Rows[i]["GrupoNome"].ToString(),
+                    UsuariosId = int.Parse(dt.Rows[i]["UsuariosId"].ToString()),
+                    Nome = dt.Rows[i]["Nome"].ToString(),
+                    Email = dt.Rows[i]["Email"].ToString()
+                };
+                lista.Add(item);
+                objDAL.FecharConexao();
+            }
+            return lista;
+        }
+
+        public List<GrupoUsuario> RetornarListagemId(String GruposId)
+        {
+            List<GrupoUsuario> lista = new List<GrupoUsuario>();
+            GrupoUsuario item;
+            DAL objDAL = new DAL();
+            objDAL.LimparParametros();
+
+            //Consulta para Listar a Relação -> INNER JOIN
+            String sql = $"Select GruposId, GrupoNome, UsuariosId, Nome, Email From GrupoUsuario Inner Join Grupos on Grupos.Id = GrupoUsuario.GruposId Inner Join Usuarios on UsuariosId = Usuarios.Id Where GruposId = '{GruposId}' order by GruposId".ToString();
+
+            DataTable dt = objDAL.RetDatatable(sql);
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                item = new GrupoUsuario
+                {
+                    GruposId = dt.Rows[i]["GruposId"].ToString(),
                     GrupoNome = dt.Rows[i]["GrupoNome"].ToString(),
                     UsuariosId = int.Parse(dt.Rows[i]["UsuariosId"].ToString()),
                     Nome = dt.Rows[i]["Nome"].ToString(),
