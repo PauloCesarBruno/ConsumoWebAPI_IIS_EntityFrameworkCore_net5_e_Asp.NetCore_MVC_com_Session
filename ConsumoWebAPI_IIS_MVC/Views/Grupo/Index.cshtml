@@ -19,7 +19,7 @@
                     <th>
                         @Html.DisplayNameFor(model => model.Id)
                     </th>
-                    <th style="color: red;">
+                    <th>
                         @Html.DisplayNameFor(model => model.GrupoNome)
                     </th>
                     <th></th>
@@ -30,7 +30,7 @@
                 {
                     <tr>
                         <td>
-                            <p style="padding: 0px 20px 0px 20px;">@Html.DisplayFor(modelItem => item.Id)</p>
+                            <p style="padding: 0px 20px 0px 20px; color: red;">@Html.DisplayFor(modelItem => item.Id)</p>
 </td>
                         <td>
                             <p style="padding: 0px 20px 0px 20px;">@Html.DisplayFor(modelItem => item.GrupoNome)</p>
