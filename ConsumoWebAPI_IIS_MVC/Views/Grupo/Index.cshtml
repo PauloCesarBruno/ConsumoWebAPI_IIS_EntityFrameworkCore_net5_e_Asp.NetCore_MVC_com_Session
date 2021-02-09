@@ -9,7 +9,7 @@
     <hr />
 
     <p>
-        <a asp-action="Create" class=" btn btn-outline-success btn-sm">Add. Novo Grupo</a>
+        <button type="button" class=" btn btn-outline-success btn-sm Cadastro">Add. Novo Grupo</button>
     </p>
 
     <div class="table-responsive">
@@ -36,13 +36,36 @@
                             <p style="padding: 0px 20px 0px 20px;">@Html.DisplayFor(modelItem => item.GrupoNome)</p>
                         </td>
                         <td>
-                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-primary btn-sm">Editar</a> |
-                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-success btn-sm">Detalhes</a> |
+                            <button type="button"  class="btn btn-outline-primary btn-sm Editar" data-id="@item.Id">Editar</button> |
                             <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger btn-sm">Excluir</a>
                         </td>
                     </tr>
                 }
             </tbody>
         </table>
+        <div class="modal" id="modal">
+
+        </div>
+
+        @section scripts{
+            <script>
+                $(function () {
+                    $(".Editar").click(function () {
+                        var id = $(this).attr("data-id");
+                        $("#modal").load("Edit?id=" + id, function () {
+                            $("#modal").modal();
+                        })
+                    });
+                })
+                              
+
+                $(".Cadastro").click(function () {
+                    $("#modal").load("Create", function () {
+                        $("#modal").modal();
+                    })
+                });
+
+            </script>
+        }
     </div>
 </div>

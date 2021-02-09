@@ -4,37 +4,42 @@
     ViewData["Title"] = "Delete";
 }
 
-<h1>Deletar Registro</h1>
 
-<div>
-    <h4>Usuários</h4>
-    <hr />
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true"></span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title">Deletar Registro</h4>
+        </div>
+        <div class="modal-body">           
+                <h6>Tem Certeza que deseja DELETAR este Registro ?</h6>
+                <hr />
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Id)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Id)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Nome)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Nome)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Email)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Email)
+                    </dd>
+                </dl>
 
-    <h5>Tem Certeza que deseja DELETAR este Registro ?</h5>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Id)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Id)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-    </dl>
-
-    <form asp-action="Delete">
-        <input class="btn btn-outline-danger btn-sm" type="submit" value="Deletar" /> |
-        <a class="btn btn-outline-success btn-sm" asp-action="Index">Desistir</a>
-    </form>
+                <form asp-action="Delete">
+                    <input class="btn btn-outline-danger btn-sm" type="submit" value="Deletar" /> |
+                    <a class="btn btn-outline-success btn-sm" asp-action="Index">Desistir</a>
+                </form>
+            </div>
+        </div>        
+    </div>
 </div>

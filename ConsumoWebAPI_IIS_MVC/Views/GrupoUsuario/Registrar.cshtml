@@ -6,61 +6,68 @@
 <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 <link rel="icon" href="~/img/Grupo.ico" />
 
-<div class="container">
-    <br />
-    <h2>Registrar novo membro à um grupo</h2>
-    <hr />
-    <br />
 
-    <form asp-controller="GrupoUsuario" asp-action="Registrar">
-        @*<input type="hidden" asp-for="GruposId" class="form-control" value="@try {@ViewBag.Lista.GruposId} catch { }" />*@
-
-        <div class="form-group">
-            <h5>Grupos</h5>
-            <select asp-for="GruposId" class="form-control">
-                @{
-                    try
-                    {
-                        foreach (var item in (List<Grupo>)ViewBag.ListaGrupos)
-                        {
-                            <option value="@item.Id">@item.GrupoNome</option>
-                        }
-
-                    }
-                    catch (Exception)
-                    {
-                        //
-                    }
-                }
-            </select>
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true"></span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title">Registrar novo membro à um grupo</h4>
         </div>
+        <div class="modal-body">
+            <div class="container">
+                <br />               
+                <form asp-controller="GrupoUsuario" asp-action="Registrar">
+                    @*<input type="hidden" asp-for="GruposId" class="form-control" value="@try {@ViewBag.Lista.GruposId} catch { }" />*@
 
-        <div class="form-group">
-            <h5>Membros</h5>
-            <select asp-for="UsuariosId" class="form-control" id="sltMembro">
-                @{
-                    try
-                    {
-                        foreach (var item in (List<Usuarios>)ViewBag.ListaUsuarios)
-                        {
-                            <option value="@item.Id">@item.Nome | @item.Email</option>
-                        }
+                    <div class="form-group">
+                        <h5>Grupos</h5>
+                        <select asp-for="GruposId" class="form-control">
+                            @{
+                                try
+                                {
+                                    foreach (var item in (List<Grupo>)ViewBag.ListaGrupos)
+                                    {
+                                        <option value="@item.Id">@item.GrupoNome</option>
+                                    }
 
-                    }
-                    catch (Exception)
-                    {
-                        //
-                    }
-                }
-            </select>
-        </div>
+                                }
+                                catch (Exception)
+                                {
+                                    //
+                                }
+                            }
+                        </select>
+                    </div>
 
-        <br />
-        <hr />
+                    <div class="form-group">
+                        <h5>Membros</h5>
+                        <select asp-for="UsuariosId" class="form-control" id="sltMembro">
+                            @{
+                                try
+                                {
+                                    foreach (var item in (List<Usuarios>)ViewBag.ListaUsuarios)
+                                    {
+                                        <option value="@item.Id">@item.Nome | @item.Email</option>
+                                    }
 
-        <button type="submit" class="btn btn-success btn-sm">Registrar</button>
-        <button style="margin-left: 3px;" type="button" class="btn btn-dark btn-sm" onclick="Voltar()">Desistir</button>
-    </form>
+                                }
+                                catch (Exception)
+                                {
+                                    //
+                                }
+                            }
+                        </select>
+                    </div>
+
+                    <br />
+                    <hr />
+
+                    <button type="submit" class="btn btn-success btn-sm">Registrar</button>
+                    <button style="margin-left: 3px;" type="button" class="btn btn-dark btn-sm" onclick="Voltar()">Desistir</button>
+                </form>
+            </div>
+        </div>        
+    </div>
 </div>
 
 <script>
