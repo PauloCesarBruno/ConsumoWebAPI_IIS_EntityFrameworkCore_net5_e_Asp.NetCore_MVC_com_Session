@@ -28,7 +28,10 @@ namespace ConsumoWebAPI_IIS_MVC.Controllers
             return View(Data);
         }
 
-        // GET: UsuarioController/Details/5
+        // Retirei o Details...
+        //========================================================================
+
+        /* GET: UsuarioController/Details/5
         public ActionResult Details(int id)
         {
             var wc = new WebClient();
@@ -45,7 +48,7 @@ namespace ConsumoWebAPI_IIS_MVC.Controllers
 
 
             return View(Data);
-        }
+        }   */
 
         // GET: UsuarioController/Create
         public ActionResult Create()
