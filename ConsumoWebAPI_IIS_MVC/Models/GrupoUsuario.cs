@@ -51,7 +51,7 @@ namespace ConsumoWebAPI_IIS_MVC.Models
             DAL objDAL = new DAL();
             objDAL.LimparParametros();
 
-            //Consulta para Listar a Relação -> INNER JOIN
+            //Consulta para Listar a Relação --> INNER JOIN
             String sql = $"Select GruposId, GrupoNome, UsuariosId, Nome, Email From GrupoUsuario Inner Join Grupos on Grupos.Id = GrupoUsuario.GruposId Inner Join Usuarios on UsuariosId = Usuarios.Id Where GruposId = '{GruposId}' order by GruposId".ToString();
 
             DataTable dt = objDAL.RetDatatable(sql);
