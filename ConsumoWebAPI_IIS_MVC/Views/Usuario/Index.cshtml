@@ -9,7 +9,7 @@
     <hr />
 
     <p>
-        <button type="button" class=" btn btn-outline-success btn-sm Cadastro">Add. Novo Membro</button>
+        <button type="button" class=" btn btn-outline-success btn-sm Cadastro"><i class="fa fa-user"></i> Add. Novo Membro</button>
     </p>
 
     <div class="table-responsive">
@@ -42,8 +42,8 @@
                             <p style="padding: 0px 20px 0px 20px;">@Html.DisplayFor(modelItem => item.Email)</p>
                         </td>
                         <td>
-                            <button type="button" class="btn btn-outline-primary btn-sm Editar" data-id="@item.Id">Editar</button> |
-                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger btn-sm">Excluir</a>
+                            <button type="button" class="btn btn-outline-primary btn-sm Editar" data-id="@item.Id"><i class="fa fa-edit"></i> Editar</button> |
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger btn-sm"><i class="fa fa-eraser"></i> Excluir</a>
                         </td>
                     </tr>
                 }
