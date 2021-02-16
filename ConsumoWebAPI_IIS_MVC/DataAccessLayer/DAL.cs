@@ -40,7 +40,7 @@ namespace ConsumoWebAPI_IIS_MVC.DataAccessLayer
             Colecao.Add(new SqlParameter(nome, valor));
         }
 
-        public Object ExecuraManipulacao(CommandType commandType, String Sp_Ou_Texto)
+        public Object ExecutarManipulacao(CommandType commandType, String Sp_Ou_Texto)
         {
             try
             {

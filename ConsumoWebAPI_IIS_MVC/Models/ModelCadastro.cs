@@ -44,7 +44,7 @@ namespace ConsumoWebAPI_IIS_MVC.Models
                     objDAL.AddParametros("Nome", Nome);
                     objDAL.AddParametros("Email", Email);
                     objDAL.AddParametros("Senha", Senha);
-                    String sql = objDAL.ExecuraManipulacao(CommandType.Text, "Insert Into Login (Nome, Email, Senha) Values (@Nome, @Email, @Senha)").ToString();
+                    String sql = objDAL.ExecutarManipulacao(CommandType.Text, "Insert Into Login (Nome, Email, Senha) Values (@Nome, @Email, @Senha)").ToString();
                     DataTable dt = objDAL.RetDatatable(sql);
                     objDAL.FecharConexao();
                 }
