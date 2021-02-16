@@ -91,7 +91,6 @@ namespace ConsumoWebAPI_IIS_MVC.Models
 
                 string sql = "INSERT INTO GrupoUsuario (GruposId,UsuariosId) " +
                   $"VALUES('{GruposId}', '{UsuariosId}')";
-                objDAL.RetDatatable(sql);
 
                 DataTable dt = objDAL.RetDatatable(sql);
 
