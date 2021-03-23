@@ -1,12 +1,12 @@
 ﻿@model GrupoUsuario
 
 <div class="container">
-    <h3>Filtro por IdGrupo</h3>
+    <h3>Filtro por Id_Grupo</h3>
     <hr />
     <form asp-controller="GrupoUsuario" asp-action="Filtro">
         <div class="form-row">
             <div class="col col-4">
-                <input asp-for="GruposId" type="text" class="form-control" placeholder="Digite o Código(Id) do Grupo" />
+                <input asp-for="GruposId" type="number" class="form-control" placeholder="Digite o Código(Id) do Grupo" />
             </div>
             <div class="col col-2">
                 <button type="submit" class="btn btn-outline-primary"><i class="fa fa-check"></i>Buscar</button>
