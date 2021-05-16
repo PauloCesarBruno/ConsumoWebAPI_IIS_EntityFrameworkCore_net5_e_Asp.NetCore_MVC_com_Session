@@ -10,7 +10,7 @@ namespace ConsumoWebAPI_IIS_MVC.DataAccessLayer
 {  
     public class DAL
     {
-        public static readonly String Server = "DESKTOP-CBCKVV5";
+        public static readonly String Server = "DESKTOP-EJP79KA";
         public static readonly String Database = "Grupo";
         public static readonly String User = "sa";
         public static readonly String Password = "Paradoxo22";
